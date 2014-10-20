@@ -1,0 +1,17 @@
+{
+   "html_attributions" : [],
+   "results" : [
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : 42.373362,
+               "lng" : -71.118956
+            }
+         },
+         "id" : "c7f50c862d9e5b9d5d0811af4f34fa39c0dcbeff",
+         "place_id" : "ChIJ0WEQ3kJ344kRgqD4jNgR18s",
+         "reference" : "CoQBeQAAAIQ43OgM4KKX-_8dBUyoRq5yxxsd_bpUZW853vwidhAJK-Z57_8fxyYQH-XXDMl5XJF75umRlRnhHMlwx_tVH9kjqzDEGtEOD74qLZY3F8bBRDWmKWMnxelJag4QWZSROE05TG86XQV9JcmN1xTjqVJRVLghQfcLyJwx4zWF47tFEhCzOmPxulcV2U_URFoVuIzyGhSSE1T3z2_YU3TNIZtKA22LSuig8A"
+      }
+   ],
+   "status" : "OK"
+}

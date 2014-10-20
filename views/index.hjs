@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>KendallHarvardData</title>
+    <link rel='stylesheet' href='/stylesheet.css' />
+  </head>
+  <body>
+  	<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+  	<script src="./barGraphFunction.js"></script>
+  	<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <div id="tooltip" class="hidden">
+      <p><span id="value">100</span></p>
+    </div>
+  	<script type="text/javascript">
+  		var listLatLong = [[42.366029,-71.085838],[42.375427,-71.118670]];
+      var listType = ["restaurantbakerybarcafe","schooluniversity","subway_stationtaxi_standtrain_station"];
+  		createBarGraph(listLatLong,listType);
+  	</script>
+  </body>
+</html>
