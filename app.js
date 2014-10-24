@@ -1,5 +1,6 @@
 var express = require('express');
 var http = require('http');
+var https = require('https');
 var path = require('path');
 var favicon = require('static-favicon');
 var logger = require('morgan');
@@ -55,12 +56,23 @@ app.use(function(err, req, res, next) {
 });
 
 app.get('/',function(req,res,next){
+    
     res.render('index');
     res.end();
 })
 
 app.get('/data',function(req,res){
-
+    var result = "";
+    var url = "https://maps.googleapis.com/maps/api/place/radarsearch/json?location=42.366029,-71.085838&radius=800&types=restaurant|bakery|bar|cafe&key=AIzaSyCP-j5RWqQPLnhUXt3P4RdUMVqpkz_VKxI";
+    https.get(url, function(response) {
+        response.on('data', function(data) {
+            result += data.toString();
+        });
+        response.on('end', function() {
+            res.send(result);
+            res.end();
+        });
+    });
 })
 
 http.createServer(app).listen(app.get('port'),function(){

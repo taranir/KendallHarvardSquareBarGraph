@@ -19,7 +19,6 @@ function createBarGraph (listLatLong,listType){
 		}
 	}
 
-
 	function makeCallBack(index) {
 		return function(placesData){
 			//console.log([""+latPoint+","+longPoint],currentListType,i,j);
