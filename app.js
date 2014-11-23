@@ -9,13 +9,11 @@ var bodyParser = require('body-parser');
 var url = require('url');
 var querystring = require('querystring');
 var routes = require('./routes');
-var users = require('./routes/user');
-
 var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'hjs');
+app.set('view engine', 'ejs');
 app.set('port',process.env.PORT || 8000);
 app.use(favicon());
 app.use(logger('dev'));
