@@ -36,6 +36,7 @@ function createBarGraph (listLatLong,listType){
 	}
 
 	function makeBarGraph(dataset){
+			console.log(dataset);
 			var xScale = d3.scale.ordinal()
 							.domain(d3.range(dataset.length))
 							.rangeRoundBands([padding, w-padding], 0.05);
@@ -66,7 +67,7 @@ function createBarGraph (listLatLong,listType){
 	        var xAxis = d3.svg.axis()
 	                          .scale(xScale2)
 	                          .orient("bottom")
-	                          .ticks(2);
+	                          .ticks(dataset.length/3);
 	                          
 
 	        var yAxis = d3.svg.axis()
@@ -88,7 +89,19 @@ function createBarGraph (listLatLong,listType){
 			   .attr("height", function(d) {
 			   		return 0;
 			   })
-			   .attr("fill","#1f77b4");
+			   .attr("fill",function(d,i) {
+			   		console.log(i);
+			   		if (i%3===0) {
+			   			return "#1f77b4";
+			   		}
+			   		else if (i%3===1){
+			   			return "#336600";
+			   		}
+			   		else {
+			   			return "#990000";
+			   		}
+			   		
+			   	});
 
 	        svg.selectAll("rect")
 	            .data(dataset)
@@ -103,7 +116,7 @@ function createBarGraph (listLatLong,listType){
 	        svg.selectAll("rect")
 	            .data(dataset)
 	            .on("mouseover", function(d) {
-	            var xPosition = parseFloat(d3.select(this).attr("x"))+5;
+	            var xPosition = parseFloat(d3.select(this).attr("x"))+10;
 	            var yPosition = parseFloat(d3.select(this).attr("y"))+h/20;
 
 	            d3.select("#tooltip")
